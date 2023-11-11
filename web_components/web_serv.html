@@ -17,4 +17,15 @@
 </div>
 </body>
 </html>
-https://babushka4.github.io/pythonBot/web_components/web_serv.html
+<script>
+    let tg = window.Telegram.WebApp;
+    tg.expand();
+    tg.sendData(111)
+
+    let MarioImg = document.getElementById("Mario")
+    let EnshteinImg = document.getElementById("Enshtein")
+
+    MarioImg.addEventListener("click", function(){
+        alert("here");
+    });
+</script>
