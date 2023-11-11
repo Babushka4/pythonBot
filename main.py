@@ -1,8 +1,12 @@
 import asyncio
+
+from aiogram import types
+from aiogram.types import KeyboardButton, WebAppInfo, ReplyKeyboardMarkup
+
 from config import bot, dispatcher
 from aiogram.filters.command import Command
 from data_base.database import new_user, get_user_by_id
-from aiogram.types.web_app_info import WebAppInfo
+from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton, WebAppInfo
 
 
 @dispatcher.message(Command("start"))
@@ -11,8 +15,14 @@ async def cmd_start(message):
     if not current_user:
         await message.answer("What is your name?")
     else:
-        await message.answer(f"Hello, duude!",
-                             web_app=WebAppInfo(url="https://market.yandex.ru/?clid=2288477"))
+        ikb_donate = InlineKeyboardMarkup(row_width=1,
+                                          inline_keyboard=[
+                                              [
+                                                  InlineKeyboardButton(text='Донат',
+                                                                       web_app=WebAppInfo(url="https://babushka4.github.io/pythonBot/web_components/web_serv.html"))
+                                              ]
+                                          ])
+        await message.answer(f"Hello, duude!", reply_markup=ikb_donate)
 
 
 @dispatcher.message(Command("reg"))

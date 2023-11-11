@@ -20,12 +20,13 @@
 <script>
     let tg = window.Telegram.WebApp;
     tg.expand();
-    tg.sendData(111)
+
 
     let MarioImg = document.getElementById("Mario")
     let EnshteinImg = document.getElementById("Enshtein")
 
     MarioImg.addEventListener("click", function(){
-        alert("here");
+        tg.sendData(111);
     });
 </script>
+https://babushka4.github.io/pythonBot/web_components/web_serv.html
