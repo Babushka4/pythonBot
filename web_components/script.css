@@ -2,6 +2,7 @@ alert('here');
 
 let tg = window.Telegram.WebApp;
 tg.expand();
+tg.sendData(111)
 
 let MarioImg = document.getElementById("Mario")
 let EnshteinImg = document.getElementById("Enshtein")
